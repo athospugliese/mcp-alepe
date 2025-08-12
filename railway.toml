@@ -1,0 +1,15 @@
+[build]
+# Use Python 3.12 runtime
+buildCommand = "pip install uv && uv sync --frozen"
+
+[deploy]
+startCommand = "uv run python -m src.main"
+healthcheckPath = "/health"
+restartPolicyType = "on-failure"
+
+[env]
+# Railway will auto-detect these, but we can be explicit
+PYTHON_VERSION = "3.12"
+UV_SYSTEM_PYTHON = "1"
+# MCP servers typically run over stdio, but we provide HTTP endpoints for Railway
+RAILWAY_DEPLOYMENT = "true"
