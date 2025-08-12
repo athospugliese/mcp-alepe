@@ -1,1 +1,1 @@
-web: uv run python -m src.main
+web: uv run python run_server.py

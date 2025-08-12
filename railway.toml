@@ -3,7 +3,7 @@
 buildCommand = "pip install uv && uv sync --frozen"
 
 [deploy]
-startCommand = "uv run python -m src.main"
+startCommand = "uv run python run_server.py"
 healthcheckPath = "/health"
 restartPolicyType = "on-failure"
 
